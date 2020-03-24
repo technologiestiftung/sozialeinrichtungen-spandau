@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import c from "config";
 
@@ -10,12 +10,21 @@ import PDFExport from 'components/PDFExport';
 
 const SidebarFav = (p) => {
   const { data } = p;
+  const [filtered, setFiltered] = useState([]);
   const fav = c.fav;
   const { title } = fav;
+
+  useEffect(() => {
+    if (data) {
+      const f = data.features.filter((d) => d.properties.isFaved)
+      setFiltered(f);
+    }
+  }, [data])
+
   return (
     <>
       <SidebarTitle>{title}</SidebarTitle>
-      <PDFExport data={data} />
+      <PDFExport data={filtered} />
       {data &&
         data.features
           .filter((d) => d.properties.isFaved)
