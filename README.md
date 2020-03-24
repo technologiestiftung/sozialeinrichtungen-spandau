@@ -1,4 +1,4 @@
-# tsb-react-map-boilerplate
+# tsb-sozialeinrichtungen-spandau
 
 > This project serves as a template to plot spatial data on a map.
 
