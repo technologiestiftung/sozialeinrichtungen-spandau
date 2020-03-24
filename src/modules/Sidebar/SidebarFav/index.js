@@ -6,6 +6,7 @@ import c from "config";
 
 import SidebarTitle from "../SidebarTitle";
 import CardCompact from "components/Card/CardCompact";
+import PDFExport from 'components/PDFExport';
 
 const SidebarFav = (p) => {
   const { data } = p;
@@ -14,6 +15,7 @@ const SidebarFav = (p) => {
   return (
     <>
       <SidebarTitle>{title}</SidebarTitle>
+      <PDFExport data={data} />
       {data &&
         data.features
           .filter((d) => d.properties.isFaved)

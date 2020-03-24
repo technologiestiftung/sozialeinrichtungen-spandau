@@ -57,6 +57,16 @@ export default {
       },
     ]
   },
+  pdfExport: {
+    pdfName: 'Sozialeinrichtungen',
+    columns: [
+      { header: 'Name', dataKey: 'name', },
+      { header: 'Träger', dataKey: 'traeger', },
+      { header: 'Art d. Einrichtung', dataKey: 'art_einrichtung', },
+      { header: 'E-Mail', dataKey: 'email', },
+      { header: 'Adresse', dataKey: 'adresse', },
+    ]
+  },
   tooltip: [
     {
       id: "name",
