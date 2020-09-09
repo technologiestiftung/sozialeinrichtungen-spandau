@@ -7,6 +7,9 @@ import { useStoreActions } from 'easy-peasy';
 import CardTitle from "./CardTitle";
 import CardLink from "./CardLink";
 import CardTags from "./CardTags";
+import CardTagAngebote from "./CardTagsAngebote";
+import CardTagTypen from "./CardTagsTypen";
+import CardTagZielgruppe from "./CardTagsZielgruppe";
 import CardDescription from "./CardDescription";
 import Toggle from 'components/Toggle';
 
@@ -46,13 +49,6 @@ export default (p) => {
                     content={properties[block.id]}
                   />
                 );
-                case "angebot":
-                return (
-                  <CardDescription
-                    key={`card-desc-key-${i}`}
-                    content={properties[block.id]}
-                  />
-                );
               case "link":
                 return (
                   <CardLink
@@ -72,14 +68,33 @@ export default (p) => {
                     tags={properties[block.id]}
                   />
                 );
-                case "tagswithoutlabel":
+                case "tags_zielgruppe":
                   return (
-                    <CardTags
+                    <CardTagZielgruppe
                       ismail="true"
                       key={`card-link-key-${i}`}
+                      label={block.label}
                       tags={properties[block.id]}
                     />
                   );
+                  case "tags_angebote":
+                    return (
+                      <CardTagAngebote
+                        ismail="true"
+                        key={`card-link-key-${i}`}
+                        label={block.label}
+                        tags={properties[block.id]}
+                      />
+                    );
+                    case "tags_typen":
+                      return (
+                        <CardTagTypen
+                          ismail="true"
+                          key={`card-link-key-${i}`}
+                          label={block.label}
+                          tags={properties[block.id]}
+                        />
+                      );
               default:
                 return null;
             }

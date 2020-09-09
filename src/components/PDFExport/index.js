@@ -46,7 +46,7 @@ export default (p) => {
   }, [data]);
 
   const createTable = (cols, body) => {
-    const doc = new jsPDF();
+    const doc = new jsPDF('l');
     doc.autoTable({
       body: body,
       columns: cols,

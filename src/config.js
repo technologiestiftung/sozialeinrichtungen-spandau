@@ -2,8 +2,8 @@ export default {
   socialTags: {
   },
   map: {
-    mapCenter: [13.4124999, 52.5040961],
-    mapZoom: [10],
+    mapCenter: [13.19596, 52.51863377],
+    mapZoom: [13],
     marker: {
       color: {
         selected: 'green',
@@ -25,17 +25,19 @@ export default {
   },
   about: {
     legend: {
-      id: 'art_angebot'
+      id: 'Veranstaltungsort'
     },
-    title: "Name des Projekts hier",
+    title: "Soziale Einrichtungen und Angebote in Spandau",
     paragraphs: [
       {
-        title: "Subheadline hier",
-        content: "Lorem ipsum [dolorem](https://www.google.de) est. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+        title: "Was zeigt diese Karte?",
+        content:
+          "Diese Karte stellt eine Übersicht von Einrichtungen die regelmäßige soziale Angebote für Berliner*innen anbieten. Sie können die gezeigten Einrichtungen nach der Art des Angebots Zielgruppen, und Stadtteilen filtern. Durch anklicken der Punkte erhalten Sie mehr Informationen über jede Einrichtung und die dort jeweils stattfindenden Angebote. Sie können Einrichtungen als Favoriten markieren. Über das Herzsymbol der Menüleiste lassen sich die ausgewählten Favoriten als PDF exportieren.",
       },
       {
-        title: "Subheadline hier",
-        content: "Lorem ipsum [dolorem](https://www.google.de) est. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+        title: "Wie kommen die Angebote in die Karte?",
+        content:
+          "Diese Karte wird von den Stadteilkoordinatoren des Bezirks Spandau gepflegt. Haben Sie Fragen oder möchten ein weiteres Angebot eintragen lassen, dann kontaktieren Sie bitte die jeweilige Stadtteilkoordination.",
       },
     ]
   },
@@ -44,76 +46,78 @@ export default {
   },
   filter: {
     title: 'Filter und Suche',
-    filter: [
+     filter: [
       {
-        id: "zielgruppe_themenspezifisch",
+        id: "Zielgruppen",
         component: "tags",
-        label: "Zielgruppe Themenspezifisch"
+        label: "Zielgruppen"
       },
       {
-        id: "angebote",
+        id: "Angebotstypen",
         component: "tags",
-        label: "Angebote"
+        label: "Angebotstypen"
       },
-    ]
+      {
+        id: "Stadtteil",
+        component: "tags",
+        label: "Stadtteile"
+      },
+      ]
   },
   pdfExport: {
     pdfName: 'Sozialeinrichtungen',
     columns: [
-      { header: 'Name', dataKey: 'name', },
-      { header: 'Träger', dataKey: 'traeger', },
-      { header: 'Art d. Einrichtung', dataKey: 'art_einrichtung', },
-      { header: 'E-Mail', dataKey: 'email', },
-      { header: 'Adresse', dataKey: 'adresse', },
+      { header: 'Veranstaltungsort', dataKey: 'Veranstaltungsort' },
+      { header: 'Adresse', dataKey: 'Adresse', },
+      //{ header: 'Link', dataKey: 'Link', },
+      { header: 'Zielgruppen', dataKey: 'Zielgruppen', },
+      { header: 'Angebote', dataKey: 'Angebote', },
+      
     ]
   },
   tooltip: [
     {
-      id: "name",
+      id: "Veranstaltungsort",
       component: "title",
-      label: "Institution",
+      label: "Veranstaltungsort",
     },
     {
-      id: "art_angebot",
+      id: "Adresse",
       component: "description",
-      label: "Angebot",
+      label: "Adresse",
     }
-  ],
+   ],
   detail: [
     {
-      id: "name",
+      id: "Veranstaltungsort",
       component: "title",
-      label: "Institution",
+      label: "Veranstaltungsort",
     },
-    {
-      id: "art_angebot",
-      component: "description",
-      label: "Angebot",
-    },
-    {
-      id: "bezeichnung",
-      component: "description",
-      label: "Bezeichnung",
-    },
-    {
-      id: "email",
-      component: "link",
-      label: "E-Mail",
-    },
-    {
-      id: "adresse",
+     {
+      id: "Adresse",
       component: "description",
       label: "Adresse",
     },
-    {
-      id: "angebote",
-      component: "tags",
-      label: "Angebote",
+     {
+      id: "Link",
+      component: "link",
+      label: "Mehr Informationen",
     },
     {
-      id: "zielgruppe_themenspezifisch",
+      id: "Zielgruppen",
       component: "tags",
-      label: "Zielgruppen",
+      label: "Das Angebot richtet sich an",
+    },
+    {
+      id: "Angebotstypen",
+      component: "tags",
+      label: "Angebotstypen",
+    },
+    {
+      id: "Angebote",
+      component: "tags_angebote",
+      label: "Aktuelle Angebote",
     },
   ],
 };
+
