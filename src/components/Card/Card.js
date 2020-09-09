@@ -46,13 +46,20 @@ export default (p) => {
                     content={properties[block.id]}
                   />
                 );
+                case "angebot":
+                return (
+                  <CardDescription
+                    key={`card-desc-key-${i}`}
+                    content={properties[block.id]}
+                  />
+                );
               case "link":
                 return (
                   <CardLink
-                    ismail="true"
+                    ismail="false"
                     key={`card-link-key-${i}`}
                     label={block.label}
-                    content={properties[block.id]}
+                    content={"Webseite"}
                     url={properties[block.id]}
                   />
                 );
@@ -65,6 +72,14 @@ export default (p) => {
                     tags={properties[block.id]}
                   />
                 );
+                case "tagswithoutlabel":
+                  return (
+                    <CardTags
+                      ismail="true"
+                      key={`card-link-key-${i}`}
+                      tags={properties[block.id]}
+                    />
+                  );
               default:
                 return null;
             }
