@@ -4,7 +4,8 @@ import CardLabel from './CardLabel';
 
 export default p => {
   const { url, content, label, ismail } = p;
-  const directTo = ismail ? `mailto:${url}` : url;
+  // const directTo = ismail ? `mailto:${url}` : url;
+  const directTo = url;
   return (
     <div
         {...p}
